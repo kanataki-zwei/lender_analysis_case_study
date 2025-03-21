@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: bi_pg
+    environment:
+      POSTGRES_DB: bi_db
+      POSTGRES_USER: bi_user
+      POSTGRES_PASSWORD: bi_pass
+    ports:
+      - "5438:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
